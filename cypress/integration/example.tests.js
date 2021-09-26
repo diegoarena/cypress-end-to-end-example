@@ -1,5 +1,5 @@
 describe('My First Test', () => {
-  it('Visits the Google page', () => {
+  it('Example using cypress', () => {
     cy.visit('https://example.cypress.io')
 
     cy.contains('type').click()
