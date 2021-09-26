@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  tests:
+    container_name: 'cypress-end-to-end-example'
+    image: 'cypress-end-to-end-example'
+    tty: true 
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes: 
+      - .:/test
