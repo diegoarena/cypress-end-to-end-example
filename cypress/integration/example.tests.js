@@ -1,15 +1,11 @@
 describe('My First Test', () => {
-  it('Example using cypress', () => {
-    cy.visit('https://example.cypress.io')
-
-    cy.contains('type').click()
-
-    // Should be on a new URL which includes '/commands/actions'
-    cy.url().should('include', '/commands/actions')
-
-    // Get an input, type into it and verify that the value has been updated
-    cy.get('.action-email')
-      .type('fake@email.com')
-      .should('have.value', 'fake@email.com')
+  it('No search results', () => {
+    cy.visit('http://automationpractice.com/index.php')
+    //fill the search and press enter 
+    cy.get('#search_query_top')
+    .type("123")
+    .type('{enter}') 
+    //verify that no results found 
+    cy.get('.alert').contains( 'No results were found for your search "123"')
   })
 })
